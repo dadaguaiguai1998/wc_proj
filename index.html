@@ -1,117 +1,59 @@
 <!doctype html>
-<html>
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Apple</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>仿苹果风格导航栏 | 毛玻璃效果</title>
+    <!-- Font Awesome 6 (免费图标库，用于苹果logo、搜索和购物袋图标) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <link rel="stylesheet" href="css/main.css" />
-    <script src="js/main.js"></script>
   </head>
-
   <body>
-    <header>
-      <nav>
-        <a class="nav-logo">🍎</a>
-        <ul>
-          <li><a class="nav-link">Mac</a></li>
-          <li><a class="nav-link">iPad</a></li>
-          <li><a class="nav-link">iPhone</a></li>
-          <li><a class="nav-link">Watch</a></li>
-          <li><a class="nav-link">TV</a></li>
-          <li><a class="nav-link">Music</a></li>
-          <li><a class="nav-link">技术支持</a></li>
-        </ul>
-        <a class="nav-icon">🔍</a>
-        <a class="nav-icon">🛒</a>
-      </nav>
-    </header>
+    <!-- 仿苹果毛玻璃导航栏 (固定顶部) -->
+    <header class="apple-navbar"></header>
+
+    <!-- 主要内容区域，滚动时透过导航栏毛玻璃可见其下内容 -->
     <main>
-      <section class="hero">
-        <video
-          class="hero-background"
-          autoplay
-          muted
-          loop
-          playsinline
-          poster="hero-poster.jpg"
-        >
-          <source src="hero-video.mp4" type="video/mp4" />
-          <source src="hero-video.webm" type="video/webm" />
-        </video>
-        <div class="hero-content">
-          <h2 class="hero-title">iPhone 15 Pro</h2>
-          <p class="hero-subtitle">钛金属，轻盈登场</p>
-          <div class="hero-cta">
-            <a class="hero-link">进一步了解</a>
-            <a class="hero-link">购买</a>
+      <ul class="video-grid" id="videoListContainer">
+        <li class="video-card">
+          <div class="card-cover">
+            <img
+              src="https://picsum.photos/id/20/400/225"
+              alt="视频封面"
+              loading="lazy"
+            />
+            <div class="card-meta">03:25</div>
           </div>
-        </div>
-      </section>
-
-      <section class="products">
-        <!-- 产品卡片1 -->
-        <article class="product-card">
-          <figure class="product-image">
-            <picture>
-              <source
-                media="(min-width: 1200px)"
-                srcset="iphone-pro-large.jpg"
-              />
-              <source
-                media="(min-width: 768px)"
-                srcset="iphone-pro-medium.jpg"
-              />
-              <img
-                src="iphone-pro-small.jpg"
-                alt="iPhone 15 Pro 展示图"
-                loading="eager"
-              />
-            </picture>
-            <figcaption>iPhone 15 Pro</figcaption>
-          </figure>
-          <div class="product-info">
-            <h3 class="product-title">iPhone 15 Pro</h3>
-            <p class="product-description">A17 Pro芯片，钛金属边框。</p>
-            <div class="product-link">
-              <a href="#">进一步了解</a>
-              <a href="#">购买</a>
+          <div class="card-info">
+            <div class="video-title">
+              【4K】探索未知边界：AI 如何重塑前端开发体验
+            </div>
+            <div class="video-author">
+              <span class="avatar-placeholder"></span>
+              <span class="author-name">科技猿星球</span>
+            </div>
+            <div class="video-stats">
+              <span>🔴 12.8万播放</span>
+              <span>💬 3456条弹幕</span>
             </div>
           </div>
-        </article>
-
-        <!-- 产品卡片2 -->
-        <article class="product-card">
-          <figure class="product-image">
-            <picture>
-              <source
-                media="(min-width: 1200px)"
-                srcset="macbook-pro-large.jpg"
-              />
-              <source
-                media="(min-width: 768px)"
-                srcset="macbook-pro-medium.jpg"
-              />
-              <img
-                src="macbook-pro-small.jpg"
-                alt="MacBook Pro 展示图"
-                loading="lazy"
-              />
-            </picture>
-            <figcaption>MacBook Pro</figcaption>
-          </figure>
-          <div class="product-info">
-            <h3 class="product-title">MacBook Pro</h3>
-            <p class="product-description">M3 Pro芯片，性能狂飙。</p>
-            <div class="product-link">
-              <a href="#">进一步了解</a>
-              <a href="#">购买</a>
-            </div>
-          </div>
-        </article>
-      </section>
+        </li>
+      </ul>
     </main>
-    <footer>
-      <p class="footer-copyright">Copyright © 2024 Apple Inc.</p>
-    </footer>
+    <div
+      id="load-more-sentinel"
+      style="height: 20px; margin: 20px 0; text-align: center; color: #aaa"
+    >
+      —— 加载中 ——
+    </div>
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <!-- 无需额外JavaScript，纯CSS交互（focus/hover），毛玻璃完美呈现 -->
   </body>
 </html>
